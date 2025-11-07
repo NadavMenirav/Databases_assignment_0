@@ -12,7 +12,7 @@ if __name__ == '__main__':
     cursor.execute("""
         SELECT date
         FROM covid_deaths
-        WHERE location = "South America" AND new_cases > 150000
+        WHERE location = 'South America' AND new_cases > 150000
         ORDER BY new_cases
     """)
     print(', '.join(str(row) for row in cursor.fetchall()))
