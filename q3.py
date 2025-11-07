@@ -10,6 +10,8 @@ if __name__ == '__main__':
     )
     cursor = mydb.cursor()
     cursor.execute("""
-        ## PUT YOUR QUERY HERE ##
+        SELECT DISTINCT location
+        FROM covid_deaths
+        WHERE new_deaths > new_cases
     """)
     print(', '.join(str(row) for row in cursor.fetchall()))
